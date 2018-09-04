@@ -1,5 +1,4 @@
-Simple drawing canvas to use with Guile
----
+# Simple drawing canvas to use with Guile
 
 Compile and run with
 
@@ -12,6 +11,14 @@ Connecting to guile:
 Or, better, accessing from emacs with geiser:
 
 ```M-x and connect-to-guile```
+
+## Functions supported
+
+`(reset)` - fully resets canvas
+
+`(draw-point x y)` - draws point at x, y
+
+`(draw-line x1 y1 x2 y2)` - draws line from x1, y1 to x2, y2
 
 
 Thanks to [these][1] [blog][2] [posts][3].
