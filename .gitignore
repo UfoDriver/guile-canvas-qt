@@ -6,3 +6,4 @@ build/
 ui_*.h
 *~
 *.pro.user
+canvas
