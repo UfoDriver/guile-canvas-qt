@@ -9,7 +9,8 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    pen(Qt::red)
 {
     canvas = this;
     ui->setupUi(this);
@@ -25,7 +26,7 @@ MainWindow* MainWindow::canvas = NULL;
 void MainWindow::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-    painter.setPen(Qt::red);
+    painter.setPen(pen);
     painter.drawPoints(points.data(), points.length());
     painter.drawLines(lines.data(), lines.length());
 }
@@ -49,6 +50,11 @@ void MainWindow::addLine(int x1, int y1, int x2, int y2)
     repaint();
 }
 
+void MainWindow::setPen(int r, int g, int b)
+{
+    pen.setColor(QColor(r, g, b));
+    repaint();
+}
 
 SCM MainWindow::canvas_reset()
 {
@@ -68,10 +74,17 @@ SCM MainWindow::draw_line(SCM x1, SCM y1, SCM x2, SCM y2)
     return SCM_UNSPECIFIED;
 }
 
+SCM MainWindow::set_pen_color(SCM r, SCM g, SCM b)
+{
+    MainWindow::canvas->setPen(scm_to_int(r), scm_to_int(g), scm_to_int(b));
+    return SCM_UNSPECIFIED;
+}
+
 void* MainWindow::register_functions(void*)
 {
     scm_c_define_gsubr("reset", 0, 0, 0, (scm_t_subr)&canvas_reset);
     scm_c_define_gsubr("draw-point", 2, 0, 0, (scm_t_subr)&draw_point);
     scm_c_define_gsubr("draw-line", 4, 0, 0, (scm_t_subr)&draw_line);
+    scm_c_define_gsubr("set-pen-color", 3, 0, 0, (scm_t_subr)&set_pen_color);
     return NULL;
 }

@@ -20,6 +20,8 @@ Or, better, accessing from emacs with geiser:
 
 `(draw-line x1 y1 x2 y2)` - draws line from x1, y1 to x2, y2
 
+`(set-pen-color r g b)` - sets pen color in RGB format
+
 
 Thanks to [these][1] [blog][2] [posts][3].
 

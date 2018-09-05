@@ -3,6 +3,7 @@
 
 #include <libguile.h>
 
+#include <QPen>
 #include <QVector>
 #include <QWidget>
 
@@ -29,16 +30,19 @@ public:
     void resetCanvas();
     void addPoint(int x, int y);
     void addLine(int x1, int y1, int x2, int y2);
+    void setPen(int r, int g, int b);
 
     // Guile fuctions
     static SCM canvas_reset();
     static SCM draw_point(SCM x, SCM y);
     static SCM draw_line(SCM x1, SCM y1, SCM x2, SCM y2);
+    static SCM set_pen_color(SCM r, SCM g, SCM b);
 
 private:
     Ui::MainWindow *ui;
     QVector<QPoint> points;
     QVector<QLine> lines;
+    QPen pen;
 };
 
 #endif // MAINWINDOW_H
