@@ -25,6 +25,6 @@ Or, better, accessing from emacs with geiser:
 
 Thanks to [these][1] [blog][2] [posts][3].
 
-[1]: https://somacomputacional.wordpress.com/2013/12/28/integrar-a-gnu-guile-con-c-parte-1/
-[2]: https://somacomputacional.wordpress.com/2013/12/28/integrar-a-gnu-guile-con-c-parte-2/
-[3]: https://somacomputacional.wordpress.com/2013/12/29/integrar-a-gnu-guile-con-c-parte-3/
+[1]: https://web.archive.org/web/20181208023324/https://somacomputacional.wordpress.com/2013/12/28/integrar-a-gnu-guile-con-c-parte-1/
+[2]: https://web.archive.org/web/20140127180720/http://somacomputacional.wordpress.com/2013/12/28/integrar-a-gnu-guile-con-c-parte-2/
+[3]: https://web.archive.org/web/20140129015306/https://somacomputacional.wordpress.com/2013/12/29/integrar-a-gnu-guile-con-c-parte-3/
